@@ -41,7 +41,8 @@ find.hypotenuse.default <- function(atriangle)
 #' @examples atriangle <- rtriangle(3,4); find.hypotenuse(atriangle)
 find.hypotenuse.rtriangle <- function(atriangle)
 {
-  
+  ## hypotenuse
+  return(sqrt((atriangle$base ^ 2) + (atriangle$height ^ 2)))
 }
 
 
@@ -73,12 +74,12 @@ find.perimeter.default <- function(atriangle)
 find.perimeter.rtriangle <- function(atriangle)
 {
   
+  
+  c = find.hypotenuse(atriangle)
+  return(atriangle$base + atriangle$height + c)
+  
+  
 }
-
-
-
-
-
 
 # Area Generic Method
 
@@ -107,6 +108,12 @@ find.area.default <- function(atriangle)
 find.area.rtriangle <- function(atringle)
 {
   
+  return(atringle$base * atringle$height * 1/2)
+  
 }
 
+test <- rtriangle()
+find.hypotenuse(test)
+find.perimeter(test)
+find.area(test)
 
